@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "method_order": [
+    "reimherr",
+    "wiesenfarth",
+    "jones",
+    "cp"
+  ],
+  "figure_labels": [
+    "Reimherr",
+    "Wiesenfarth",
+    "Jones",
+    "CP"
+  ],
+  "risk_aggregation": {
+    "NIG": "mean",
+    "eight_school": "mean",
+    "lupus": "median"
+  },
+  "cp": {
+    "NIG_simulation_regions": "historical joint/scalar HDR, marginal mu central Student-t",
+    "other_cases_regions": "central intervals / calibrated joint central rectangles",
+    "selected": "bootstrap_deletion_H1"
+  },
+  "uncertainty": "Schools shading: between-dataset SD, not CI; Lupus median reduces inner losses, outer EPSS is averaged.",
+  "tables": {
+    "NIG/real_3x4.csv": "2af0f4a4ae07d324361dec3b47a78602aee38af036987950d01a086e1161bde2",
+    "NIG/simulation_var_0p25_5x4.csv": "c544c2a90191be6a541603a5fd3fc807ad7cb1be51e8386be0f251795ed01f89",
+    "NIG/simulation_var_20_5x4.csv": "74d16af36f218327795bada5a9a1e1505d04fbf929593899a86ee0d5f618d48c",
+    "eight_school/real_4x4.csv": "10b2e428cb248f73cd7ecca5f8f65ee8c75d4a076f392947caec97d3fc268116",
+    "eight_school/simulation_4x4.csv": "a76db7c7a6677b3decc3a04af7ef1c5aea436232ffd1ec57d73875d9407545fb",
+    "lupus/real_4x4.csv": "b76dddfd3c26fd373715fbdef124f7a3270d9554bb19d6ca1b288f93aa1afb37",
+    "lupus/simulation_3x4.csv": "6f2603f4ede5e296ef24a23a788f3e65af89212d10da5e04f7311c2329431c4e"
+  },
+  "audit_scope": "Hash-certified v2 plot tables; legacy NIG full replication coverage and recomputed means. No new fits."
+}
+

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.o
+.venv/
+.DS_Store
+results/
+figures/
+build/
+*.aux
+*.log
+*.out
+*.synctex.gz

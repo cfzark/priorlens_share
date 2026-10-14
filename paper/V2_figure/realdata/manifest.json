@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "outputs": {
+    "NIG/real_3x4.csv": "2af0f4a4ae07d324361dec3b47a78602aee38af036987950d01a086e1161bde2",
+    "NIG/real_3x4.pdf": "a20fac12393e864039ea356e8858828feae2a510c9bbee79135e0ae5040a3a20",
+    "NIG/real_3x4.png": "8f4cce53100a5e176a8cdbfa9fd0eff8baf307743725fc2b1271ed2d77c12a47",
+    "NIG/simulation_var_0p25_5x4.csv": "c544c2a90191be6a541603a5fd3fc807ad7cb1be51e8386be0f251795ed01f89",
+    "NIG/simulation_var_0p25_5x4.pdf": "11c442c35a35bbb6f5f0d12637d099d76125af14cadb1278671dd7a042cd5f6d",
+    "NIG/simulation_var_0p25_5x4.png": "a79f32396c421b41ba85c327a26e802513b1c9cdfc874713e51c8f9b4c3199e1",
+    "NIG/simulation_var_20_5x4.csv": "74d16af36f218327795bada5a9a1e1505d04fbf929593899a86ee0d5f618d48c",
+    "NIG/simulation_var_20_5x4.pdf": "3c5a8933563e8cdb1cec40939b1b6988255fa091208424dafa83370be715744c",
+    "NIG/simulation_var_20_5x4.png": "2d2b88cabee031ebd0feffdf6207cf290aea238e39040211e467e4e82aeccbab",
+    "eight_school/real_4x4.csv": "10b2e428cb248f73cd7ecca5f8f65ee8c75d4a076f392947caec97d3fc268116",
+    "eight_school/real_4x4.pdf": "805eafdc0b2ad3be800c2d8bafb3be24f4e55d105a0f7a9236137d4f16f37a73",
+    "eight_school/real_4x4.png": "a1e9fe05f2b3764916641b14fb3a205d2b5563627b412ea20f812be814fa4885",
+    "eight_school/simulation_4x4.csv": "a76db7c7a6677b3decc3a04af7ef1c5aea436232ffd1ec57d73875d9407545fb",
+    "eight_school/simulation_4x4.pdf": "224f7e1dcd5911e5272f3422d383fac350185b2f9677bfbad1bf41d7cab45ac9",
+    "eight_school/simulation_4x4.png": "570ad7f83202431a3128aba2c950ea1c73a6067ef5f34747dbe6b312928d5a25",
+    "lupus/real_4x4.csv": "b76dddfd3c26fd373715fbdef124f7a3270d9554bb19d6ca1b288f93aa1afb37",
+    "lupus/real_4x4.pdf": "e3e83752687a7bf65711cf0af7cd144dd743ebf8ebbfe6e568b04de1fc4c6358",
+    "lupus/real_4x4.png": "68afddd567538a60dbefe8f335212f64ed2fec2c3c2cd9e750280af70e688726",
+    "lupus/simulation_3x4.csv": "6f2603f4ede5e296ef24a23a788f3e65af89212d10da5e04f7311c2329431c4e",
+    "lupus/simulation_3x4.pdf": "7b5e50f9020191f899a14fb30d674cb6ee99d5dddbb566240d5854d6f80674d3",
+    "lupus/simulation_3x4.png": "ab6fc2ed03741f4aa60da2921fe486523bf44c124520d6c9c78b4c28d4cbc472"
+  },
+  "method_order": [
+    "reimherr",
+    "wiesenfarth",
+    "jones",
+    "cp"
+  ],
+  "risk_aggregation": {
+    "NIG": "mean",
+    "eight_school": "mean",
+    "lupus": "median"
+  },
+  "cp": {
+    "NIG_simulation_regions": "historical joint/scalar HDR, marginal mu central Student-t",
+    "other_cases_regions": "central intervals / calibrated joint central rectangles",
+    "selected": "bootstrap_deletion_H1"
+  }
+}
+
