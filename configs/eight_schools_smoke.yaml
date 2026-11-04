@@ -1,0 +1,96 @@
+schema_version: 1
+run_mode: smoke
+seed_scheme: sha256_32_v1
+model:
+  name: eight_schools
+data:
+  y:
+  - 28
+  - 8
+  - -3
+  - 7
+  - -1
+  - 1
+  - 18
+  - 12
+  s:
+  - 15
+  - 10
+  - 16
+  - 11
+  - 9
+  - 11
+  - 10
+  - 18
+  unit_ids:
+  - school_1
+  - school_2
+  - school_3
+  - school_4
+  - school_5
+  - school_6
+  - school_7
+  - school_8
+priors:
+  interest:
+    family: schools
+    mu_mean: 5
+    mu_sd: 10
+    tau_kind: half_t
+    tau_scale: 5
+    tau_df: 4
+  baseline:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_scale: 25
+    tau_df: 4
+prior_grid:
+- prior_id: center
+  mu_mean: 5
+- prior_id: conflict
+  mu_mean: 30
+targets:
+- id: hyper_log
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: log
+    reference: 10
+- id: mu_marginal
+  coordinates:
+  - variable: mu
+    scale: 10
+- id: school_1_marginal
+  coordinates:
+  - variable: theta[1]
+  focal_unit_id: school_1
+candidates:
+  values:
+  - 0
+  - 1
+  - 2
+  meaning: number_deleted
+  unit: school
+  min_retained: 2
+methods:
+- preset: jones_subsample_deletion_v2
+  paths: 2
+  posterior_draws: 128
+  quantile_grid_size: 128
+- preset: cp_subsample_deletion_v2
+  paths: 2
+  posterior_draws: 128
+  region:
+    hyper_log: exact_density
+    mu_marginal: equal_tail
+    school_1_marginal: equal_tail
+inference:
+  backend: optimized
+  posterior_reuse: none
+  school_grid_size: 801
+execution: {}
+seed: 20260312
+output_root: results/fixtures/eight_schools_smoke

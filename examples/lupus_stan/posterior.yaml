@@ -1,0 +1,48 @@
+schema_version: 1
+workflow: posterior
+seed: 20260312
+
+model:
+  stan: model.stan
+data: data.json
+
+# These keys are Stan data-block variables, passed directly to the model.
+priors:
+  baseline:
+    prior_loc: [0, 0]
+    prior_scale: [10, 1000]
+    prior_df: 7
+  interest:
+    prior_loc: [0, 3]
+    prior_scale: [10, 2.5]
+    prior_df: 7
+
+# One baseline fit plus one informative fit for each row.
+prior_grid:
+  - {prior_id: slope_1, prior_loc: [0, 1]}
+  - {prior_id: slope_3, prior_loc: [0, 3]}
+  - {prior_id: slope_5, prior_loc: [0, 5]}
+
+targets:
+  - id: beta_joint
+    coordinates:
+      - {variable: beta0, scale: 1}
+      - {variable: beta1, scale: 1}
+  - id: beta0
+    coordinates:
+      - {variable: beta0, scale: 1}
+  - id: beta1
+    coordinates:
+      - {variable: beta1, scale: 1}
+
+inference:
+  backend: general
+  chains: 4
+  parallel_chains: 1
+  warmup: 1000
+  sampling: 1000
+  adapt_delta: 0.95
+  stan_min_ess: 400
+  # Used when --backend importance is selected.
+  sobol_power: 15
+  is_min_ess: 500

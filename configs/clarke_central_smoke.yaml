@@ -1,0 +1,66 @@
+schema_version: 1
+run_mode: smoke
+seed_scheme: sha256_64_v2
+model:
+  name: normal_known
+  options:
+    sigma: 1
+data:
+  y:
+  - -1
+  - 0
+  - 1
+priors:
+  interest:
+    family: normal
+    mean: 0.5
+    sd: 0.7
+  baseline:
+    family: flat
+prior_grid:
+- prior_id: center
+  mean: 0
+- prior_id: shifted
+  mean: 1
+targets:
+- id: mu
+  coordinates:
+  - variable: mu
+candidates:
+  values:
+  - 0
+  - 1
+  - 2
+  meaning: pseudo_sample_size
+  unit: observation
+methods:
+- preset: clarke_kl_v2
+  path_group: paired_clarke_regions
+  posterior_draws: 512
+  max_candidates: 100
+  density_engine: exact_density
+- preset: clarke_tkl_v2
+  path_group: paired_clarke_regions
+  posterior_draws: 512
+  max_candidates: 100
+  density_engine: exact_density
+  alpha: 0.05
+- preset: clarke_central_tkl_v2
+  path_group: paired_clarke_regions
+  posterior_draws: 512
+  max_candidates: 100
+  density_engine: exact_density
+  alpha: 0.05
+  quantile_rule: weighted_cdf
+  central_tkl_orders:
+  - 16
+  - 32
+  - 64
+  - 128
+  central_tkl_tolerance: 1.0e-06
+inference:
+  backend: optimized
+  posterior_reuse: none
+execution: {}
+seed: 20260312
+output_root: results/fixtures/clarke_central_smoke

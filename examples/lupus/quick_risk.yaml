@@ -1,0 +1,245 @@
+schema_version: 1
+run_mode: smoke
+seed_scheme: sha256_64_v2
+seed: 20260312
+model:
+  name: lupus_logistic
+data:
+  y:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  x:
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.00592834438136227
+  - -0.00592834438136227
+  - 0.32013059659356446
+  - 0.32013059659356446
+  - 0.32013059659356446
+  - 0.32013059659356446
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  x_center: 0.509090909090909
+  x_divisor: 1.5334650799790488
+  unit_ids:
+  - patient_1
+  - patient_2
+  - patient_3
+  - patient_4
+  - patient_5
+  - patient_6
+  - patient_7
+  - patient_8
+  - patient_9
+  - patient_10
+  - patient_11
+  - patient_12
+  - patient_13
+  - patient_14
+  - patient_15
+  - patient_16
+  - patient_17
+  - patient_18
+  - patient_19
+  - patient_20
+  - patient_21
+  - patient_22
+  - patient_23
+  - patient_24
+  - patient_25
+  - patient_26
+  - patient_27
+  - patient_28
+  - patient_29
+  - patient_30
+  - patient_31
+  - patient_32
+  - patient_33
+  - patient_34
+  - patient_35
+  - patient_36
+  - patient_37
+  - patient_38
+  - patient_39
+  - patient_40
+  - patient_41
+  - patient_42
+  - patient_43
+  - patient_44
+  - patient_45
+  - patient_46
+  - patient_47
+  - patient_48
+  - patient_49
+  - patient_50
+  - patient_51
+  - patient_52
+  - patient_53
+  - patient_54
+  - patient_55
+priors:
+  baseline:
+    family: student_t
+    loc:
+    - 0.0
+    - 0.0
+    scale:
+    - 10.0
+    - 1000.0
+    df: 7
+  interest:
+    family: student_t
+    loc:
+    - 0.0
+    - 3.0
+    scale:
+    - 10.0
+    - 2.5
+    df: 7
+prior_grid:
+- prior_id: slope_3
+  loc.1: 3.0
+targets:
+- id: beta_joint
+  coordinates:
+  - &id001
+    variable: beta0
+  - &id002
+    variable: beta1
+- id: beta0
+  coordinates:
+  - *id001
+- id: beta1
+  coordinates:
+  - *id002
+candidates:
+  meaning: number_augmented
+  unit: observation
+  values:
+  - 0
+  - 1
+methods:
+- preset: reimherr_project_bootstrap_v2
+  id: reimherr
+  posterior_draws: 512
+  risk_reps: 4
+  candidates:
+    unit: observation
+    meaning: baseline_size_offset
+    values:
+    - -1
+    - 0
+    - 1
+- preset: wiesenfarth_project_plugin_v2
+  id: wiesenfarth
+  posterior_draws: 512
+  risk_reps: 4
+  candidates:
+    unit: observation
+    meaning: informative_size_reduction
+    values:
+    - -1
+    - 0
+    - 1
+inference:
+  backend: optimized
+  posterior_reuse: none
+output_root: results/lupus

@@ -1,0 +1,329 @@
+schema_version: 1
+run_mode: production
+seed: 20260312
+seed_scheme: sha256_64_v2
+model:
+  name: eight_schools
+data:
+  y:
+  - 28
+  - 8
+  - -3
+  - 7
+  - -1
+  - 1
+  - 18
+  - 12
+  s:
+  - 15
+  - 10
+  - 16
+  - 11
+  - 9
+  - 11
+  - 10
+  - 18
+priors:
+  interest:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_df: 4
+    tau_scale: 25
+  baseline:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_df: 4
+    tau_scale: 25
+prior_grid:
+- prior_id: tau_scale_00025
+  tau_scale: 0.25
+- prior_id: tau_scale_00050
+  tau_scale: 0.5
+- prior_id: tau_scale_00075
+  tau_scale: 0.75
+- prior_id: tau_scale_00100
+  tau_scale: 1
+- prior_id: tau_scale_00125
+  tau_scale: 1.25
+- prior_id: tau_scale_00150
+  tau_scale: 1.5
+- prior_id: tau_scale_00175
+  tau_scale: 1.75
+- prior_id: tau_scale_00200
+  tau_scale: 2
+- prior_id: tau_scale_00225
+  tau_scale: 2.25
+- prior_id: tau_scale_00250
+  tau_scale: 2.5
+- prior_id: tau_scale_00275
+  tau_scale: 2.75
+- prior_id: tau_scale_00300
+  tau_scale: 3
+- prior_id: tau_scale_00325
+  tau_scale: 3.25
+- prior_id: tau_scale_00350
+  tau_scale: 3.5
+- prior_id: tau_scale_00375
+  tau_scale: 3.75
+- prior_id: tau_scale_00400
+  tau_scale: 4
+- prior_id: tau_scale_00425
+  tau_scale: 4.25
+- prior_id: tau_scale_00450
+  tau_scale: 4.5
+- prior_id: tau_scale_00475
+  tau_scale: 4.75
+- prior_id: tau_scale_00500
+  tau_scale: 5
+- prior_id: tau_scale_00525
+  tau_scale: 5.25
+- prior_id: tau_scale_00550
+  tau_scale: 5.5
+- prior_id: tau_scale_00575
+  tau_scale: 5.75
+- prior_id: tau_scale_00600
+  tau_scale: 6
+- prior_id: tau_scale_00625
+  tau_scale: 6.25
+- prior_id: tau_scale_00650
+  tau_scale: 6.5
+- prior_id: tau_scale_00675
+  tau_scale: 6.75
+- prior_id: tau_scale_00700
+  tau_scale: 7
+- prior_id: tau_scale_00725
+  tau_scale: 7.25
+- prior_id: tau_scale_00750
+  tau_scale: 7.5
+- prior_id: tau_scale_00775
+  tau_scale: 7.75
+- prior_id: tau_scale_00800
+  tau_scale: 8
+- prior_id: tau_scale_00825
+  tau_scale: 8.25
+- prior_id: tau_scale_00850
+  tau_scale: 8.5
+- prior_id: tau_scale_00875
+  tau_scale: 8.75
+- prior_id: tau_scale_00900
+  tau_scale: 9
+- prior_id: tau_scale_00925
+  tau_scale: 9.25
+- prior_id: tau_scale_00950
+  tau_scale: 9.5
+- prior_id: tau_scale_00975
+  tau_scale: 9.75
+- prior_id: tau_scale_01000
+  tau_scale: 10
+- prior_id: tau_scale_01050
+  tau_scale: 10.5
+- prior_id: tau_scale_01100
+  tau_scale: 11
+- prior_id: tau_scale_01150
+  tau_scale: 11.5
+- prior_id: tau_scale_01200
+  tau_scale: 12
+- prior_id: tau_scale_01250
+  tau_scale: 12.5
+- prior_id: tau_scale_01300
+  tau_scale: 13
+- prior_id: tau_scale_01350
+  tau_scale: 13.5
+- prior_id: tau_scale_01400
+  tau_scale: 14
+- prior_id: tau_scale_01450
+  tau_scale: 14.5
+- prior_id: tau_scale_01500
+  tau_scale: 15
+- prior_id: tau_scale_01550
+  tau_scale: 15.5
+- prior_id: tau_scale_01600
+  tau_scale: 16
+- prior_id: tau_scale_01650
+  tau_scale: 16.5
+- prior_id: tau_scale_01700
+  tau_scale: 17
+- prior_id: tau_scale_01750
+  tau_scale: 17.5
+- prior_id: tau_scale_01800
+  tau_scale: 18
+- prior_id: tau_scale_01850
+  tau_scale: 18.5
+- prior_id: tau_scale_01900
+  tau_scale: 19
+- prior_id: tau_scale_01950
+  tau_scale: 19.5
+- prior_id: tau_scale_02000
+  tau_scale: 20
+- prior_id: tau_scale_02050
+  tau_scale: 20.5
+- prior_id: tau_scale_02100
+  tau_scale: 21
+- prior_id: tau_scale_02150
+  tau_scale: 21.5
+- prior_id: tau_scale_02200
+  tau_scale: 22
+- prior_id: tau_scale_02250
+  tau_scale: 22.5
+- prior_id: tau_scale_02300
+  tau_scale: 23
+- prior_id: tau_scale_02350
+  tau_scale: 23.5
+- prior_id: tau_scale_02400
+  tau_scale: 24
+- prior_id: tau_scale_02450
+  tau_scale: 24.5
+- prior_id: tau_scale_02500
+  tau_scale: 25
+- prior_id: tau_scale_02550
+  tau_scale: 25.5
+- prior_id: tau_scale_02600
+  tau_scale: 26
+- prior_id: tau_scale_02650
+  tau_scale: 26.5
+- prior_id: tau_scale_02700
+  tau_scale: 27
+- prior_id: tau_scale_02750
+  tau_scale: 27.5
+- prior_id: tau_scale_02800
+  tau_scale: 28
+- prior_id: tau_scale_02850
+  tau_scale: 28.5
+- prior_id: tau_scale_02900
+  tau_scale: 29
+- prior_id: tau_scale_02950
+  tau_scale: 29.5
+- prior_id: tau_scale_03000
+  tau_scale: 30
+- prior_id: tau_scale_03100
+  tau_scale: 31
+- prior_id: tau_scale_03200
+  tau_scale: 32
+- prior_id: tau_scale_03300
+  tau_scale: 33
+- prior_id: tau_scale_03400
+  tau_scale: 34
+- prior_id: tau_scale_03500
+  tau_scale: 35
+- prior_id: tau_scale_03600
+  tau_scale: 36
+- prior_id: tau_scale_03700
+  tau_scale: 37
+- prior_id: tau_scale_03800
+  tau_scale: 38
+- prior_id: tau_scale_03900
+  tau_scale: 39
+- prior_id: tau_scale_04000
+  tau_scale: 40
+- prior_id: tau_scale_04100
+  tau_scale: 41
+- prior_id: tau_scale_04200
+  tau_scale: 42
+- prior_id: tau_scale_04300
+  tau_scale: 43
+- prior_id: tau_scale_04400
+  tau_scale: 44
+- prior_id: tau_scale_04500
+  tau_scale: 45
+- prior_id: tau_scale_04600
+  tau_scale: 46
+- prior_id: tau_scale_04700
+  tau_scale: 47
+- prior_id: tau_scale_04800
+  tau_scale: 48
+- prior_id: tau_scale_04900
+  tau_scale: 49
+- prior_id: tau_scale_05000
+  tau_scale: 50
+targets:
+- id: joint_log
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: log
+    reference: 10
+- id: joint_variance
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: square
+    scale: 100
+- id: log_tau
+  coordinates:
+  - variable: tau
+    transform: log
+    reference: 10
+- id: tau2
+  coordinates:
+  - variable: tau
+    transform: square
+    scale: 100
+candidates:
+  meaning: informative_fresh_size_reduction
+  unit: school
+  values:
+  - -8
+  - -7
+  - -6
+  - -5
+  - -4
+  - -3
+  - -2
+  - -1
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+methods:
+- preset: lin_ppd_v1
+  id: lin_ppd
+  paths: 500
+  posterior_draws: 4096
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: school
+    values:
+    - -8
+    - -7
+    - -6
+    - -5
+    - -4
+    - -3
+    - -2
+    - -1
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+inference:
+  backend: optimized
+  posterior_reuse: none
+  school_grid_size: 801
+  school_engine: batched
+  school_batch_size: 16
+  school_cache_by_data: true
+  school_cache_size: 256
+  school_cache_quantiles: true
+  school_quantile_engine: vectorized_newton
+  tail_tol: 1.0e-10
+  school_convergence_tol: 1.0e-05
+execution: {}
+output_root: results/eight_schools_lin_study
+replication_id: -1

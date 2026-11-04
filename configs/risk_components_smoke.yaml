@@ -1,0 +1,97 @@
+schema_version: 1
+run_mode: smoke
+seed_scheme: sha256_64_v2
+model:
+  name: normal_known
+  options:
+    sigma: 1
+data:
+  y:
+  - -1.1
+  - -0.7
+  - -0.2
+  - 0.0
+  - 0.3
+  - 0.5
+  - 0.8
+  - 1.2
+priors:
+  interest:
+    family: normal
+    mean: 0.5
+    sd: 0.4472135954999579
+  baseline:
+    family: flat
+prior_grid:
+- prior_id: one
+targets:
+- id: mu
+  coordinates:
+  - variable: mu
+candidates:
+  values:
+  - -1
+  - 0
+  - 1
+  - 2
+  meaning: baseline_size_offset
+  unit: observation
+methods:
+- preset: reimherr_project_bootstrap_v2
+  id: reimherr_bootstrap
+  sampling: bootstrap
+  risk: posterior_mse
+  reference_rule: baseline_posterior_mean
+  risk_moments: marginal
+  risk_coupling: shared_by_size
+  risk_reps: 4
+  posterior_draws: 256
+- preset: reimherr_project_bootstrap_v2
+  id: reimherr_likelihood
+  sampling: likelihood
+  risk: posterior_mse
+  reference_rule: baseline_posterior_mean
+  risk_moments: marginal
+  risk_coupling: shared_by_size
+  risk_reps: 4
+  posterior_draws: 256
+- preset: wiesenfarth_project_plugin_v2
+  id: wiesenfarth_likelihood
+  sampling: likelihood
+  risk: squared_mean
+  reference_rule: baseline_posterior_mean
+  risk_moments: marginal
+  risk_coupling: shared_by_size
+  risk_reps: 4
+  posterior_draws: 256
+  candidates:
+    values:
+    - -1
+    - 0
+    - 1
+    - 2
+    meaning: informative_size_reduction
+    unit: observation
+- preset: wiesenfarth_project_plugin_v2
+  id: wiesenfarth_bootstrap
+  sampling: bootstrap
+  risk: squared_mean
+  reference_rule: baseline_posterior_mean
+  risk_moments: marginal
+  risk_coupling: shared_by_size
+  risk_reps: 4
+  posterior_draws: 256
+  candidates:
+    values:
+    - -1
+    - 0
+    - 1
+    - 2
+    meaning: informative_size_reduction
+    unit: observation
+inference:
+  backend: optimized
+  posterior_reuse: none
+execution: {}
+seed: 20260312
+output_root: results/fixtures/risk_components_smoke

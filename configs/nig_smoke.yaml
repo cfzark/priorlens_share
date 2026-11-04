@@ -1,0 +1,68 @@
+schema_version: 1
+run_mode: smoke
+seed_scheme: sha256_32_v1
+model:
+  name: nig
+data:
+  y:
+  - -1.1
+  - -0.7
+  - -0.2
+  - 0.0
+  - 0.3
+  - 0.5
+  - 0.8
+  - 1.2
+priors:
+  interest:
+    family: nig
+    mu0: 0
+    tau0_sq: 0.2
+    kappa: 6
+    eta: 5
+  baseline:
+    family: jeffreys
+prior_grid:
+- prior_id: center
+  mu0: 0
+- prior_id: conflict
+  mu0: 2
+targets:
+- id: mu
+  coordinates:
+  - variable: mu
+- id: log_variance
+  coordinates:
+  - variable: sigma2
+    transform: log
+- id: joint_mu_log_variance
+  coordinates:
+  - variable: mu
+  - variable: sigma2
+    transform: log
+candidates:
+  values:
+  - 0
+  - 1
+  - 2
+  meaning: number_augmented
+  unit: observation
+methods:
+- preset: jones_source_adaptation_v2
+  paths: 2
+  posterior_draws: 512
+  projections: 16
+  projection_rule: nig
+- preset: cp_source_faithful
+  paths: 2
+  posterior_draws: 512
+  region:
+    mu: equal_tail
+    log_variance: equal_tail
+    joint_mu_log_variance: exact_density
+inference:
+  backend: optimized
+  posterior_reuse: none
+execution: {}
+seed: 20260312
+output_root: results/fixtures/nig_smoke

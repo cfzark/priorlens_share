@@ -1,0 +1,87 @@
+schema_version: 1
+run_mode: smoke
+seed: 20260312
+model:
+  name: eight_schools
+data:
+  y:
+  - 28
+  - 8
+  - -3
+  - 7
+  - -1
+  - 1
+  - 18
+  - 12
+  s:
+  - 15
+  - 10
+  - 16
+  - 11
+  - 9
+  - 11
+  - 10
+  - 18
+priors:
+  interest:
+    family: schools
+    mu_mean: 2
+    mu_sd: 5
+    tau_kind: lognormal
+    tau_scale: 6
+    tau_log_sd: 0.3
+  baseline:
+    family: schools
+    mu_mean: 0
+    mu_sd: 100
+    tau_kind: half_cauchy
+    tau_scale: 5
+targets:
+- id: joint_log
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: log
+    reference: 10
+- id: joint_variance
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: square
+    scale: 100
+- id: mu
+  coordinates:
+  - variable: mu
+    scale: 10
+- id: log_tau
+  coordinates:
+  - variable: tau
+    transform: log
+    reference: 10
+- id: tau2
+  coordinates:
+  - variable: tau
+    transform: square
+    scale: 100
+candidates:
+  meaning: pseudo_sample_size
+  unit: school
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+methods:
+- preset: morita_2012_case2_schools_mc_v2
+  morita_design: new_schools_empirical_s
+  epsilon_c: 10
+  prior_predictive_reps: 4
+  moment_tolerance: 0.0001
+inference:
+  backend: optimized
+  posterior_reuse: none
+  school_grid_size: 401
+execution: {}
+output_root: results/fixtures/morita_schools_smoke

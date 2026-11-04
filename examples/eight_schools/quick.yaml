@@ -1,0 +1,161 @@
+schema_version: 1
+run_mode: smoke
+seed: 20260312
+seed_scheme: sha256_64_v2
+model:
+  name: eight_schools
+data:
+  y:
+  - 28
+  - 8
+  - -3
+  - 7
+  - -1
+  - 1
+  - 18
+  - 12
+  s:
+  - 15
+  - 10
+  - 16
+  - 11
+  - 9
+  - 11
+  - 10
+  - 18
+priors:
+  interest:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_df: 4
+    tau_scale: 25
+  baseline:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_df: 4
+    tau_scale: 25
+prior_grid:
+- prior_id: tau_scale_00600
+  tau_scale: 6
+targets:
+- id: joint_log
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: log
+    reference: 10
+- id: joint_variance
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: square
+    scale: 100
+- id: log_tau
+  coordinates:
+  - variable: tau
+    transform: log
+    reference: 10
+- id: tau2
+  coordinates:
+  - variable: tau
+    transform: square
+    scale: 100
+candidates:
+  meaning: number_augmented
+  unit: school
+  values:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  min_retained: 2
+methods:
+- preset: reimherr_project_bootstrap_v2
+  id: reimherr
+  posterior_draws: 512
+  risk_reps: 4
+  candidates:
+    unit: school
+    meaning: baseline_size_offset
+    values:
+    - -1
+    - 0
+    - 1
+- preset: wiesenfarth_project_plugin_v2
+  id: wiesenfarth
+  posterior_draws: 512
+  risk_reps: 4
+  candidates:
+    unit: school
+    meaning: informative_size_reduction
+    values:
+    - -1
+    - 0
+    - 1
+- preset: jones_source_adaptation_v2
+  id: jones
+  posterior_draws: 512
+  paths: 2
+  quantile_grid_size: 128
+  projections: 8
+  projection_rule: nig
+  candidates:
+    unit: school
+    meaning: number_augmented
+    values:
+    - 0
+    - 1
+- preset: cp_bootstrap_deletion_v2
+  id: cp
+  posterior_draws: 512
+  paths: 2
+  region: central
+  alphas:
+  - 0.05
+  loss_family: historical
+  gap_weight: 1
+  cap_nominal: false
+  cache_regions: true
+  candidates:
+    unit: school
+    meaning: number_deleted
+    values:
+    - 0
+    - 1
+inference:
+  backend: optimized
+  posterior_reuse: none
+  school_grid_size: 801
+  school_engine: batched
+  school_batch_size: 16
+  school_cache_by_data: true
+  school_cache_size: 256
+  school_cache_quantiles: true
+  school_quantile_engine: vectorized_newton
+  tail_tol: 1.0e-10
+  school_convergence_tol: 1.0e-05
+execution: {}
+output_root: results/eight_schools

@@ -1,0 +1,189 @@
+schema_version: 1
+run_mode: smoke
+seed: 20260312
+seed_scheme: sha256_64_v2
+model:
+  name: nig
+data:
+  y:
+  - 1.64
+  - 1.7
+  - 1.72
+  - 1.74
+  - 1.82
+  - 1.82
+  - 1.82
+  - 1.9
+  - 2.08
+priors:
+  interest:
+    family: nig
+    mu0: 1.9
+    tau0_sq: 1
+    kappa: 0.5
+    eta: 0.005
+  baseline:
+    family: jeffreys
+prior_grid:
+- prior_id: mu_1900
+  mu0: 1.9
+targets:
+- id: mu
+  coordinates:
+  - variable: mu
+    scale: 0.1
+- id: log_sigma2
+  coordinates:
+  - variable: sigma2
+    transform: log
+    reference: 0.01
+- id: joint_log
+  coordinates:
+  - variable: mu
+    scale: 0.1
+  - variable: sigma2
+    transform: log
+    reference: 0.01
+- id: sigma2
+  coordinates:
+  - &id001
+    variable: sigma2
+    scale: 0.01
+- id: joint_variance
+  coordinates:
+  - variable: mu
+    scale: 0.1
+  - *id001
+methods:
+- preset: reimherr_project_bootstrap_v2
+  id: reimherr
+  posterior_draws: 512
+  risk_reps: 4
+  candidates:
+    unit: observation
+    meaning: baseline_size_offset
+    values:
+    - -1
+    - 0
+    - 1
+  risk_invalid_policy: redraw_baseline_proper
+  risk_max_redraws: 1000
+- preset: wiesenfarth_project_plugin_v2
+  id: wiesenfarth
+  posterior_draws: 512
+  risk_reps: 4
+  candidates:
+    unit: observation
+    meaning: informative_size_reduction
+    values:
+    - -1
+    - 0
+    - 1
+- preset: jones_source_adaptation_v2
+  id: jones
+  posterior_draws: 512
+  paths: 2
+  quantile_grid_size: 128
+  projections: 8
+  projection_rule: nig
+  candidates:
+    unit: observation
+    meaning: number_augmented
+    values:
+    - 0
+    - 1
+- preset: cp_bootstrap_deletion_v2
+  id: cp
+  posterior_draws: 512
+  paths: 2
+  region: central
+  alphas:
+  - 0.05
+  loss_family: historical
+  gap_weight: 1
+  cap_nominal: false
+  cache_regions: true
+  candidates:
+    unit: observation
+    meaning: number_deleted
+    values:
+    - 0
+    - 1
+  invalid_path_policy: redraw_whole_path
+  max_path_redraws: 1000
+- preset: lin_ppd_v1
+  id: lin_ppd
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: observation
+    values:
+    - -1
+    - 0
+    - 1
+- preset: lin_plugin_v1
+  id: lin_plugin
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: observation
+    values:
+    - -1
+    - 0
+    - 1
+candidates:
+  meaning: number_augmented
+  unit: observation
+  values:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  min_retained: 4
+inference:
+  backend: optimized
+  posterior_reuse: none
+execution: {}
+output_root: results/nig_all
+replication_id: -1

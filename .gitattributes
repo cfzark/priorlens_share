@@ -1,0 +1,2 @@
+# Preserve the bytes used by release, kernel, and data SHA256 manifests.
+* -text

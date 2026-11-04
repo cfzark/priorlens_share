@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "priorlens-science"
+version = "0.1.0"
+description = "Prior-impact assessment on scalar and bivariate posterior targets"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2,<3", "scipy>=1.14,<2", "pandas>=2,<3", "PyYAML>=6,<7", "matplotlib>=3.7,<4", "joblib>=1.3,<2"]
+
+[project.optional-dependencies]
+stan = ["cmdstanpy>=1.3,<2"]
+bridge = ["bridgestan>=2.6,<3"]
+fast = ["pybind11>=2.11", "setuptools>=68"]
+
+[project.scripts]
+priorlens = "priorlens.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+prioreffect_v2 = ["stan/*.stan"]

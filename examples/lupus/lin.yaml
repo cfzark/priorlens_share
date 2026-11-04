@@ -1,0 +1,12 @@
+schema_version: 1
+experiment: quick_matching.yaml
+paths: 2
+posterior_draws: 512
+grid:
+- -1
+- 0
+- 1
+variants:
+- lin_ppd
+- lin_plugin
+alpha: 0.05

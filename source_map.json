@@ -1,0 +1,344 @@
+{
+  "files": {
+    "src/prioreffect_v2/__init__.py": {
+      "source": "v2/src/prioreffect_v2/__init__.py",
+      "source_sha256": "855b8287f609de83cd96ca1ac5a8d4ebe39e7c13cdf6f0bf689acbe8317c2158",
+      "release_sha256": "855b8287f609de83cd96ca1ac5a8d4ebe39e7c13cdf6f0bf689acbe8317c2158",
+      "change": "none"
+    },
+    "src/prioreffect_v2/__main__.py": {
+      "source": "v2/src/prioreffect_v2/__main__.py",
+      "source_sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "release_sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "change": "none"
+    },
+    "src/prioreffect_v2/calibration.py": {
+      "source": "v2/src/prioreffect_v2/calibration.py",
+      "source_sha256": "e3db1756a0f269cdcf27d7b96eaa48a0af049fd625dcf09addb4ea580fd6497d",
+      "release_sha256": "e3db1756a0f269cdcf27d7b96eaa48a0af049fd625dcf09addb4ea580fd6497d",
+      "change": "none"
+    },
+    "src/prioreffect_v2/central_tkl.py": {
+      "source": "v2/src/prioreffect_v2/central_tkl.py",
+      "source_sha256": "ce17a17c7cdaacacfafcdb5a84eb311df74e0f9455e4796f152d49efab673503",
+      "release_sha256": "ce17a17c7cdaacacfafcdb5a84eb311df74e0f9455e4796f152d49efab673503",
+      "change": "none"
+    },
+    "src/prioreffect_v2/cli.py": {
+      "source": "v2/src/prioreffect_v2/cli.py",
+      "source_sha256": "aae712a3cefd12eef45be39aeb97445ceb74624bb2c6d0aab0cabbf2ae2fa792",
+      "release_sha256": "aae712a3cefd12eef45be39aeb97445ceb74624bb2c6d0aab0cabbf2ae2fa792",
+      "change": "none"
+    },
+    "src/prioreffect_v2/core.py": {
+      "source": "v2/src/prioreffect_v2/core.py",
+      "source_sha256": "454108cffc40f54803a4a4e8c520e1161135a5e01fa76e5fddd295184580566d",
+      "release_sha256": "454108cffc40f54803a4a4e8c520e1161135a5e01fa76e5fddd295184580566d",
+      "change": "none"
+    },
+    "src/prioreffect_v2/cp_nig_experiment.py": {
+      "source": "v2/src/prioreffect_v2/cp_nig_experiment.py",
+      "source_sha256": "50b2bc1cc6a182037f1155696e3e664c93e919c183db37a3e0e1284637e52147",
+      "release_sha256": "50b2bc1cc6a182037f1155696e3e664c93e919c183db37a3e0e1284637e52147",
+      "change": "none"
+    },
+    "src/prioreffect_v2/density_hdr.py": {
+      "source": "v2/src/prioreffect_v2/density_hdr.py",
+      "source_sha256": "0d4f30de6e25da5d39bcb0c01b935ef8b607082962b5cd858b977bed66170696",
+      "release_sha256": "0d4f30de6e25da5d39bcb0c01b935ef8b607082962b5cd858b977bed66170696",
+      "change": "none"
+    },
+    "src/prioreffect_v2/experiments.py": {
+      "source": "v2/src/prioreffect_v2/experiments.py",
+      "source_sha256": "88884741e76778e337a3df9018a0d7d8dc3fc0af4c022ac5e6dca49ceb70e5a8",
+      "release_sha256": "ea9f96173fd05057b19e78fbced543856f6726aa415bdea51ca6f642bef1a8fe",
+      "change": "Packaged Stan lookup plus Lin signed-grid validation, shared-target metadata and worker dispatch"
+    },
+    "src/prioreffect_v2/focal.py": {
+      "source": "v2/src/prioreffect_v2/focal.py",
+      "source_sha256": "b8ffc9638496402b7fd303a63ef6ad06eb0fd267ba70323b9e71572cc44036e5",
+      "release_sha256": "b8ffc9638496402b7fd303a63ef6ad06eb0fd267ba70323b9e71572cc44036e5",
+      "change": "none"
+    },
+    "src/prioreffect_v2/inference.py": {
+      "source": "v2/src/prioreffect_v2/inference.py",
+      "source_sha256": "fd4ca51e5f6932b44ff73b5f936ff0ced2251828352c842b320bff93e0ac45c6",
+      "release_sha256": "2ab329b9eff16c470e595162c6cd7999b9b907a8511ec158a235266819578d6e",
+      "change": "Stan packaged-resource/cache path portability only"
+    },
+    "src/prioreffect_v2/lin.py": {
+      "source": "v2/src/prioreffect_v2/lin.py",
+      "source_sha256": "10bb8384620c6cc26b62ecb2abcc7b67d813bf6c48a78841f08e93364da9bead",
+      "release_sha256": "10bb8384620c6cc26b62ecb2abcc7b67d813bf6c48a78841f08e93364da9bead",
+      "change": "none"
+    },
+    "src/prioreffect_v2/losses.py": {
+      "source": "v2/src/prioreffect_v2/losses.py",
+      "source_sha256": "f2ef5b236663ba56fb64f0d93fefc3eb362a472a1db341f2cfff611adae0ca1b",
+      "release_sha256": "f2ef5b236663ba56fb64f0d93fefc3eb362a472a1db341f2cfff611adae0ca1b",
+      "change": "none"
+    },
+    "src/prioreffect_v2/lupus_acceleration.py": {
+      "source": "v2/src/prioreffect_v2/lupus_acceleration.py",
+      "source_sha256": "873a346a2cc63763cb7a0a99fb9294eb438af6fcb636c6f2181f85997b1a3f0c",
+      "release_sha256": "873a346a2cc63763cb7a0a99fb9294eb438af6fcb636c6f2181f85997b1a3f0c",
+      "change": "none"
+    },
+    "src/prioreffect_v2/lupus_experiment.py": {
+      "source": "v2/src/prioreffect_v2/lupus_experiment.py",
+      "source_sha256": "daaf2a0fedc3d2902d38035ebb6ebfdfc9e17c0773df3822de432601b859a26a",
+      "release_sha256": "daaf2a0fedc3d2902d38035ebb6ebfdfc9e17c0773df3822de432601b859a26a",
+      "change": "none"
+    },
+    "src/prioreffect_v2/methods.py": {
+      "source": "v2/src/prioreffect_v2/methods.py",
+      "source_sha256": "3a2807ab05c570e9fe3faa34ca60aa0b64b78d6e23be8aaf48e764bd6691acbf",
+      "release_sha256": "4da70eb873db9fdd3cb4296bf9e6bb690291cfd67e3b8e42b7872104de3b88d5",
+      "change": "Register Lin presets and dispatch to lin_runner; existing method algorithms unchanged"
+    },
+    "src/prioreffect_v2/models.py": {
+      "source": "v2/src/prioreffect_v2/models.py",
+      "source_sha256": "f3f987b541821a9d19e281af5e1ad62c64c78299a7827ed9e4e5b936f05cde50",
+      "release_sha256": "f3f987b541821a9d19e281af5e1ad62c64c78299a7827ed9e4e5b936f05cde50",
+      "change": "none"
+    },
+    "src/prioreffect_v2/moments.py": {
+      "source": "v2/src/prioreffect_v2/moments.py",
+      "source_sha256": "02797ef3dbab6d298477ea0e9c3f99c424c91fea3d00b9041665a369ba4101d2",
+      "release_sha256": "02797ef3dbab6d298477ea0e9c3f99c424c91fea3d00b9041665a369ba4101d2",
+      "change": "none"
+    },
+    "src/prioreffect_v2/morita_versions.py": {
+      "source": "v2/src/prioreffect_v2/morita_versions.py",
+      "source_sha256": "9ca9e1e126ddfe191be43d9b884b6381d98536eccc3d17e04b44fbc9ac9cba6b",
+      "release_sha256": "9ca9e1e126ddfe191be43d9b884b6381d98536eccc3d17e04b44fbc9ac9cba6b",
+      "change": "none"
+    },
+    "src/prioreffect_v2/nig_cp.py": {
+      "source": "v2/src/prioreffect_v2/nig_cp.py",
+      "source_sha256": "e2d4d58bce518b54118494b3d44c4ebaeab60abd51600c3133cc26b2063f021a",
+      "release_sha256": "e2d4d58bce518b54118494b3d44c4ebaeab60abd51600c3133cc26b2063f021a",
+      "change": "none"
+    },
+    "src/prioreffect_v2/paths.py": {
+      "source": "v2/src/prioreffect_v2/paths.py",
+      "source_sha256": "abc04f0778065dae86dc1c00b6ee62227758cda794e60c8ad13e2a5568669ffb",
+      "release_sha256": "abc04f0778065dae86dc1c00b6ee62227758cda794e60c8ad13e2a5568669ffb",
+      "change": "none"
+    },
+    "src/prioreffect_v2/quadrature.py": {
+      "source": "v2/src/prioreffect_v2/quadrature.py",
+      "source_sha256": "602ebb0f865422084c81eeb11c3fed479cc37c7e8e7c35b94ed807045e00144b",
+      "release_sha256": "602ebb0f865422084c81eeb11c3fed479cc37c7e8e7c35b94ed807045e00144b",
+      "change": "none"
+    },
+    "src/prioreffect_v2/regions.py": {
+      "source": "v2/src/prioreffect_v2/regions.py",
+      "source_sha256": "214ed5bc7122f6003d8c368b3c80771276ad88be3dda3f08301375d197dd36e8",
+      "release_sha256": "214ed5bc7122f6003d8c368b3c80771276ad88be3dda3f08301375d197dd36e8",
+      "change": "none"
+    },
+    "src/prioreffect_v2/risk_components.py": {
+      "source": "v2/src/prioreffect_v2/risk_components.py",
+      "source_sha256": "3bff068bb4a38ec300e89a86f162dd24dfa4b8d397be5ffc0f3bc8f2a61ba32b",
+      "release_sha256": "3bff068bb4a38ec300e89a86f162dd24dfa4b8d397be5ffc0f3bc8f2a61ba32b",
+      "change": "none"
+    },
+    "src/prioreffect_v2/school_acceleration.py": {
+      "source": "v2/src/prioreffect_v2/school_acceleration.py",
+      "source_sha256": "16ab58cc041fcece74f828abe44a476249ace22f65e678e9501b7066cade11ba",
+      "release_sha256": "16ab58cc041fcece74f828abe44a476249ace22f65e678e9501b7066cade11ba",
+      "change": "none"
+    },
+    "src/prioreffect_v2/selection.py": {
+      "source": "v2/src/prioreffect_v2/selection.py",
+      "source_sha256": "3aad32da4bbe2c5479b0a4f95f888fbf0ad52cbbcce8c952f332b3c86cb1d152",
+      "release_sha256": "3aad32da4bbe2c5479b0a4f95f888fbf0ad52cbbcce8c952f332b3c86cb1d152",
+      "change": "none"
+    },
+    "src/prioreffect/Clarke.py": {
+      "source": "function/prioreffect/Clarke.py",
+      "source_sha256": "577137163e4ff02efca26f0d658831ee078ea9f85f66de583bc58a7bc69d55da",
+      "release_sha256": "577137163e4ff02efca26f0d658831ee078ea9f85f66de583bc58a7bc69d55da",
+      "change": "none"
+    },
+    "src/prioreffect/Jones.py": {
+      "source": "function/prioreffect/Jones.py",
+      "source_sha256": "01b7ffd40477a7c4a112bb343cc2ae9cc70cb9ed6d2b73c8e8af6fe4c503f971",
+      "release_sha256": "01b7ffd40477a7c4a112bb343cc2ae9cc70cb9ed6d2b73c8e8af6fe4c503f971",
+      "change": "none"
+    },
+    "src/prioreffect/__init__.py": {
+      "source": "function/prioreffect/__init__.py",
+      "source_sha256": "d76b4e421fe61cb5c5ad96d8b7d6c46d2688cf974559170b9b15f4fc8caf4d0f",
+      "release_sha256": "d76b4e421fe61cb5c5ad96d8b7d6c46d2688cf974559170b9b15f4fc8caf4d0f",
+      "change": "none"
+    },
+    "src/prioreffect/api.py": {
+      "source": "function/prioreffect/api.py",
+      "source_sha256": "4327f0352b8e9fb9af8edb065b54db91bf658f74a59c25c18a71cdbf42d3641b",
+      "release_sha256": "4327f0352b8e9fb9af8edb065b54db91bf658f74a59c25c18a71cdbf42d3641b",
+      "change": "none"
+    },
+    "src/prioreffect/augmentation.py": {
+      "source": "function/prioreffect/augmentation.py",
+      "source_sha256": "52b49999875aac07e4d3e574495d41148367a534fc68199ace1d3ed854102499",
+      "release_sha256": "52b49999875aac07e4d3e574495d41148367a534fc68199ace1d3ed854102499",
+      "change": "none"
+    },
+    "src/prioreffect/beta_binomial.py": {
+      "source": "function/prioreffect/beta_binomial.py",
+      "source_sha256": "526b7e0dd4a2e257ba1395378668782d8d517feb99aa5a2a20376417418f6e13",
+      "release_sha256": "526b7e0dd4a2e257ba1395378668782d8d517feb99aa5a2a20376417418f6e13",
+      "change": "none"
+    },
+    "src/prioreffect/cp.py": {
+      "source": "function/prioreffect/cp.py",
+      "source_sha256": "94bcc8f251652ea133a13f25dcf8462eeab2dbf6f52aab324d8ad6380f4bbee2",
+      "release_sha256": "94bcc8f251652ea133a13f25dcf8462eeab2dbf6f52aab324d8ad6380f4bbee2",
+      "change": "none"
+    },
+    "src/prioreffect/distributions.py": {
+      "source": "function/prioreffect/distributions.py",
+      "source_sha256": "a441eef362e571de020b791a690d8fd5c5a03d5dc8ac6690d3d0e901f304eba1",
+      "release_sha256": "a441eef362e571de020b791a690d8fd5c5a03d5dc8ac6690d3d0e901f304eba1",
+      "change": "none"
+    },
+    "src/prioreffect/eight_schools.py": {
+      "source": "function/prioreffect/eight_schools.py",
+      "source_sha256": "2a1d8a53b71994b274ac24de25435fa366a781bd2b848f8b3dd5ec3ff0c37fa0",
+      "release_sha256": "2a1d8a53b71994b274ac24de25435fa366a781bd2b848f8b3dd5ec3ff0c37fa0",
+      "change": "none"
+    },
+    "src/prioreffect/eight_schools_simulation.py": {
+      "source": "function/prioreffect/eight_schools_simulation.py",
+      "source_sha256": "05b486273fb066f8752eece31735352a76cfd0a59947b5d8934003bcb89475d7",
+      "release_sha256": "05b486273fb066f8752eece31735352a76cfd0a59947b5d8934003bcb89475d7",
+      "change": "none"
+    },
+    "src/prioreffect/experiments.py": {
+      "source": "function/prioreffect/experiments.py",
+      "source_sha256": "3b6a0437f79cb5f56967b3d8bfe3ba2055d70a4fdebe6b0c1497eb312ffaee5a",
+      "release_sha256": "3b6a0437f79cb5f56967b3d8bfe3ba2055d70a4fdebe6b0c1497eb312ffaee5a",
+      "change": "none"
+    },
+    "src/prioreffect/factory.py": {
+      "source": "function/prioreffect/factory.py",
+      "source_sha256": "8d17fa5e06da3262edd85a565029f18a642dfd4e1b8a1e36bcc7042f851f5564",
+      "release_sha256": "8d17fa5e06da3262edd85a565029f18a642dfd4e1b8a1e36bcc7042f851f5564",
+      "change": "none"
+    },
+    "src/prioreffect/joint_nig.py": {
+      "source": "function/prioreffect/joint_nig.py",
+      "source_sha256": "dc3c06727956aac7e51863a32257be7f1619fff30ab5c54cbfb7cde379df06a0",
+      "release_sha256": "dc3c06727956aac7e51863a32257be7f1619fff30ab5c54cbfb7cde379df06a0",
+      "change": "none"
+    },
+    "src/prioreffect/jones_source_paths.py": {
+      "source": "function/prioreffect/jones_source_paths.py",
+      "source_sha256": "5e620458181444b675fae7e98c13c61b30aafbefe3ba13776c2bbb249b0cb69e",
+      "release_sha256": "5e620458181444b675fae7e98c13c61b30aafbefe3ba13776c2bbb249b0cb69e",
+      "change": "none"
+    },
+    "src/prioreffect/lupus_jones_source_paths.py": {
+      "source": "function/prioreffect/lupus_jones_source_paths.py",
+      "source_sha256": "3ad31b92a1645e01fe9b8007eb0fe3830b33e1ab67b17b5bfe5b5ab34816896f",
+      "release_sha256": "3ad31b92a1645e01fe9b8007eb0fe3830b33e1ab67b17b5bfe5b5ab34816896f",
+      "change": "none"
+    },
+    "src/prioreffect/lupus_logistic.py": {
+      "source": "function/prioreffect/lupus_logistic.py",
+      "source_sha256": "291907a9dfb68765606b279ce0d21d977f89ae8434099a338c294096013d34bf",
+      "release_sha256": "291907a9dfb68765606b279ce0d21d977f89ae8434099a338c294096013d34bf",
+      "change": "none"
+    },
+    "src/prioreffect/lupus_logistic_simulation.py": {
+      "source": "function/prioreffect/lupus_logistic_simulation.py",
+      "source_sha256": "eee7b7c3ea96c45eb6cc8a83ffcee00977d57adc5fc9cb6e4423ca9fa29f3d29",
+      "release_sha256": "eee7b7c3ea96c45eb6cc8a83ffcee00977d57adc5fc9cb6e4423ca9fa29f3d29",
+      "change": "none"
+    },
+    "src/prioreffect/marginal_sigma2.py": {
+      "source": "function/prioreffect/marginal_sigma2.py",
+      "source_sha256": "bf920865598078c9c0a02723e2cb2f3d4460a847996cec5eaf695cf2b3a10135",
+      "release_sha256": "bf920865598078c9c0a02723e2cb2f3d4460a847996cec5eaf695cf2b3a10135",
+      "change": "none"
+    },
+    "src/prioreffect/methods.py": {
+      "source": "function/prioreffect/methods.py",
+      "source_sha256": "b8c2c1fc12ac2f1d2029b8f944627999cb19791649e227216531da7a98a8350c",
+      "release_sha256": "b8c2c1fc12ac2f1d2029b8f944627999cb19791649e227216531da7a98a8350c",
+      "change": "none"
+    },
+    "src/prioreffect/metrics.py": {
+      "source": "function/prioreffect/metrics.py",
+      "source_sha256": "aaa7d1fed041cf5eef3b766f8cd0e5c9a3b19aa4203c4d3c1d4096da59c6e992",
+      "release_sha256": "aaa7d1fed041cf5eef3b766f8cd0e5c9a3b19aa4203c4d3c1d4096da59c6e992",
+      "change": "none"
+    },
+    "src/prioreffect/models.py": {
+      "source": "function/prioreffect/models.py",
+      "source_sha256": "419c1c906f703adc1ee2561a1bf33f0eea3930f4bf51e6d1e0057eb7ae043b1f",
+      "release_sha256": "419c1c906f703adc1ee2561a1bf33f0eea3930f4bf51e6d1e0057eb7ae043b1f",
+      "change": "none"
+    },
+    "src/prioreffect/morita.py": {
+      "source": "function/prioreffect/morita.py",
+      "source_sha256": "5d34764e02b0c09cb2ee0c2ecc4b555aff93b82f2396dbc94fec8a69beae8055",
+      "release_sha256": "5d34764e02b0c09cb2ee0c2ecc4b555aff93b82f2396dbc94fec8a69beae8055",
+      "change": "none"
+    },
+    "src/prioreffect/nig_cp_source_paths.py": {
+      "source": "function/prioreffect/nig_cp_source_paths.py",
+      "source_sha256": "dbf4a2dce321aeed8c04998c4876e9fc761c3c38579dc411a59d64f3f800910c",
+      "release_sha256": "dbf4a2dce321aeed8c04998c4876e9fc761c3c38579dc411a59d64f3f800910c",
+      "change": "none"
+    },
+    "src/prioreffect/nig_truncated_kl.py": {
+      "source": "function/prioreffect/nig_truncated_kl.py",
+      "source_sha256": "af18ad7d08aa3979b34dadd3a2f2ab5d16638718bca809455b624f17b909fed7",
+      "release_sha256": "af18ad7d08aa3979b34dadd3a2f2ab5d16638718bca809455b624f17b909fed7",
+      "change": "none"
+    },
+    "src/prioreffect/reimherr.py": {
+      "source": "function/prioreffect/reimherr.py",
+      "source_sha256": "fcb135e8b01d129742b36c51dbf7152c0024b99894254de851e0f70b3fca1371",
+      "release_sha256": "fcb135e8b01d129742b36c51dbf7152c0024b99894254de851e0f70b3fca1371",
+      "change": "none"
+    },
+    "src/prioreffect/risk_metrics.py": {
+      "source": "function/prioreffect/risk_metrics.py",
+      "source_sha256": "31c4e6f607161e4efe3fb7ef0d50998879ad410d46b3cfb56b296d2f0edc1227",
+      "release_sha256": "31c4e6f607161e4efe3fb7ef0d50998879ad410d46b3cfb56b296d2f0edc1227",
+      "change": "none"
+    },
+    "src/prioreffect/sampling.py": {
+      "source": "function/prioreffect/sampling.py",
+      "source_sha256": "068683533eb50f801f1fad392b2f88b1e05f9e090e1fce96cc0b9a40a08d3cf2",
+      "release_sha256": "068683533eb50f801f1fad392b2f88b1e05f9e090e1fce96cc0b9a40a08d3cf2",
+      "change": "none"
+    },
+    "src/prioreffect/utils.py": {
+      "source": "function/prioreffect/utils.py",
+      "source_sha256": "faa38a8792d3f86dd9735545c95269c1eda1213d9794461fccc4f124da7eba8a",
+      "release_sha256": "faa38a8792d3f86dd9735545c95269c1eda1213d9794461fccc4f124da7eba8a",
+      "change": "none"
+    },
+    "src/prioreffect/wiesenfarth.py": {
+      "source": "function/prioreffect/wiesenfarth.py",
+      "source_sha256": "658809442beb5353266914f28bb67c4058f1c193b8574f33c6cae9fe07aaea63",
+      "release_sha256": "658809442beb5353266914f28bb67c4058f1c193b8574f33c6cae9fe07aaea63",
+      "change": "none"
+    },
+    "src/prioreffect/wim.py": {
+      "source": "function/prioreffect/wim.py",
+      "source_sha256": "f5a8091905546a2b46655b465c1388dd359aa33cafc580c74c5328c9a28ceed1",
+      "release_sha256": "f5a8091905546a2b46655b465c1388dd359aa33cafc580c74c5328c9a28ceed1",
+      "change": "none"
+    }
+  },
+  "added_modules": {
+    "src/priorlens/stan_posterior.py": "Standalone Stan/JSON/YAML posterior workflow with CmdStan NUTS and BridgeStan IS; retained EPSS numerical kernels unchanged",
+    "src/prioreffect_v2/lin_runner.py": "Common-task Lin adapter: shared targets, cached anchors/results, unchanged lin.py numerical kernels"
+  }
+}

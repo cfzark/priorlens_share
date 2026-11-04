@@ -1,0 +1,115 @@
+schema_version: 1
+run_mode: smoke
+seed: 20260312
+seed_scheme: sha256_64_v2
+model:
+  name: eight_schools
+data:
+  y:
+  - 28
+  - 8
+  - -3
+  - 7
+  - -1
+  - 1
+  - 18
+  - 12
+  s:
+  - 15
+  - 10
+  - 16
+  - 11
+  - 9
+  - 11
+  - 10
+  - 18
+priors:
+  interest:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_df: 4
+    tau_scale: 25
+  baseline:
+    family: schools
+    mu_mean: 0
+    mu_sd: 25
+    tau_kind: half_t
+    tau_df: 4
+    tau_scale: 25
+prior_grid:
+- prior_id: tau_scale_00600
+  tau_scale: 6
+targets:
+- id: joint_log
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: log
+    reference: 10
+- id: joint_variance
+  coordinates:
+  - variable: mu
+    scale: 10
+  - variable: tau
+    transform: square
+    scale: 100
+- id: log_tau
+  coordinates:
+  - variable: tau
+    transform: log
+    reference: 10
+- id: tau2
+  coordinates:
+  - variable: tau
+    transform: square
+    scale: 100
+candidates:
+  meaning: informative_fresh_size_reduction
+  unit: school
+  values:
+  - -1
+  - 0
+  - 1
+methods:
+- preset: lin_ppd_v1
+  id: lin_ppd
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: school
+    values:
+    - -1
+    - 0
+    - 1
+- preset: lin_plugin_v1
+  id: lin_plugin
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: school
+    values:
+    - -1
+    - 0
+    - 1
+inference:
+  backend: optimized
+  posterior_reuse: none
+  school_grid_size: 801
+  school_engine: batched
+  school_batch_size: 16
+  school_cache_by_data: true
+  school_cache_size: 256
+  school_cache_quantiles: true
+  school_quantile_engine: vectorized_newton
+  tail_tol: 1.0e-10
+  school_convergence_tol: 1.0e-05
+execution: {}
+output_root: results/eight_schools_lin_quick
+replication_id: -1

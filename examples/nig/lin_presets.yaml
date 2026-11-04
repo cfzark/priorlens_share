@@ -1,0 +1,94 @@
+schema_version: 1
+run_mode: smoke
+seed: 20260312
+seed_scheme: sha256_64_v2
+model:
+  name: nig
+data:
+  y:
+  - 1.64
+  - 1.7
+  - 1.72
+  - 1.74
+  - 1.82
+  - 1.82
+  - 1.82
+  - 1.9
+  - 2.08
+priors:
+  interest:
+    family: nig
+    mu0: 1.9
+    tau0_sq: 1
+    kappa: 0.5
+    eta: 0.005
+  baseline:
+    family: jeffreys
+prior_grid:
+- prior_id: mu_1900
+  mu0: 1.9
+targets:
+- id: mu
+  coordinates:
+  - variable: mu
+    scale: 0.1
+- id: log_sigma2
+  coordinates:
+  - variable: sigma2
+    transform: log
+    reference: 0.01
+- id: joint_log
+  coordinates:
+  - variable: mu
+    scale: 0.1
+  - variable: sigma2
+    transform: log
+    reference: 0.01
+- id: sigma2
+  coordinates:
+  - &id001
+    variable: sigma2
+    scale: 0.01
+- id: joint_variance
+  coordinates:
+  - variable: mu
+    scale: 0.1
+  - *id001
+methods:
+- preset: lin_ppd_v1
+  id: lin_ppd
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: observation
+    values:
+    - -1
+    - 0
+    - 1
+- preset: lin_plugin_v1
+  id: lin_plugin
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: observation
+    values:
+    - -1
+    - 0
+    - 1
+candidates:
+  meaning: informative_fresh_size_reduction
+  unit: observation
+  values:
+  - -1
+  - 0
+  - 1
+inference:
+  backend: optimized
+  posterior_reuse: none
+execution: {}
+output_root: results/nig_lin_quick
+replication_id: -1

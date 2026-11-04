@@ -1,0 +1,299 @@
+schema_version: 1
+run_mode: smoke
+seed_scheme: sha256_64_v2
+seed: 20260312
+model:
+  name: lupus_logistic
+data:
+  y:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  x:
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.331987285356289
+  - -0.00592834438136227
+  - -0.00592834438136227
+  - 0.32013059659356446
+  - 0.32013059659356446
+  - 0.32013059659356446
+  - 0.32013059659356446
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.6461895375684912
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  - 0.972248478543418
+  x_center: 0.509090909090909
+  x_divisor: 1.5334650799790488
+  unit_ids:
+  - patient_1
+  - patient_2
+  - patient_3
+  - patient_4
+  - patient_5
+  - patient_6
+  - patient_7
+  - patient_8
+  - patient_9
+  - patient_10
+  - patient_11
+  - patient_12
+  - patient_13
+  - patient_14
+  - patient_15
+  - patient_16
+  - patient_17
+  - patient_18
+  - patient_19
+  - patient_20
+  - patient_21
+  - patient_22
+  - patient_23
+  - patient_24
+  - patient_25
+  - patient_26
+  - patient_27
+  - patient_28
+  - patient_29
+  - patient_30
+  - patient_31
+  - patient_32
+  - patient_33
+  - patient_34
+  - patient_35
+  - patient_36
+  - patient_37
+  - patient_38
+  - patient_39
+  - patient_40
+  - patient_41
+  - patient_42
+  - patient_43
+  - patient_44
+  - patient_45
+  - patient_46
+  - patient_47
+  - patient_48
+  - patient_49
+  - patient_50
+  - patient_51
+  - patient_52
+  - patient_53
+  - patient_54
+  - patient_55
+priors:
+  baseline:
+    family: student_t
+    loc:
+    - 0.0
+    - 0.0
+    scale:
+    - 10.0
+    - 1000.0
+    df: 7
+  interest:
+    family: student_t
+    loc:
+    - 0.0
+    - 3.0
+    scale:
+    - 10.0
+    - 2.5
+    df: 7
+prior_grid:
+- prior_id: slope_3
+  loc.1: 3.0
+targets:
+- id: beta_joint
+  coordinates:
+  - &id001
+    variable: beta0
+  - &id002
+    variable: beta1
+- id: beta0
+  coordinates:
+  - *id001
+- id: beta1
+  coordinates:
+  - *id002
+candidates:
+  meaning: number_augmented
+  unit: observation
+  values:
+  - 0
+  - 1
+methods:
+- preset: jones_source_adaptation_v2
+  id: jones
+  posterior_draws: 512
+  paths: 2
+  quantile_grid_size: 128
+  projections: 8
+  projection_rule: nig
+  candidates:
+    unit: observation
+    meaning: number_augmented
+    values:
+    - 0
+    - 1
+- preset: cp_bootstrap_deletion_v2
+  id: cp
+  posterior_draws: 512
+  paths: 2
+  region: central
+  alphas:
+  - 0.05
+  loss_family: historical
+  gap_weight: 1
+  cap_nominal: false
+  cache_regions: true
+  candidates:
+    unit: observation
+    meaning: number_deleted
+    values:
+    - 0
+    - 1
+- preset: cp_bootstrap_deletion_v2
+  id: cp_pdf_hdr
+  posterior_draws: 512
+  paths: 2
+  region: pdf_hdr
+  alphas:
+  - 0.05
+  loss_family: historical
+  gap_weight: 1
+  cap_nominal: false
+  cache_regions: true
+  candidates:
+    unit: observation
+    meaning: number_deleted
+    values:
+    - 0
+    - 1
+  targets:
+  - beta_joint
+- preset: lin_ppd_v1
+  id: lin_ppd
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: observation
+    values:
+    - -1
+    - 0
+    - 1
+- preset: lin_plugin_v1
+  id: lin_plugin
+  paths: 2
+  posterior_draws: 512
+  alpha: 0.05
+  candidates:
+    meaning: informative_fresh_size_reduction
+    unit: observation
+    values:
+    - -1
+    - 0
+    - 1
+inference:
+  backend: importance
+  posterior_reuse: none
+  sobol_power: 18
+  sobol_max_power: 18
+output_root: results/lupus_all
+replication_id: -1
